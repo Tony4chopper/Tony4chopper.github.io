@@ -3,8 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title></title>
-        <meta name="robots" content="noindex">
+        <title>初识RUST</title>
 
 
         <!-- Custom HTML head -->
@@ -89,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="开端.html">写在开端</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">初学路上的所思所想</li><li class="chapter-item expanded "><a href="初识RUST.html"><strong aria-hidden="true">1.</strong> 初识RUST</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="解析个IP报文吧.html"><strong aria-hidden="true">1.1.</strong> 自己想的小Demo</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="开端.html">写在开端</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">初学路上的所思所想</li><li class="chapter-item expanded "><a href="初识RUST.html" class="active"><strong aria-hidden="true">1.</strong> 初识RUST</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="解析个IP报文吧.html"><strong aria-hidden="true">1.1.</strong> 自己想的小Demo</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -174,20 +173,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="开端"><a class="header" href="#开端">开端</a></h1>
-<p>这个笔记的初衷是为了记录自己学习RUST过程中的积累与思考，希望这个笔记能做到这么几点：</p>
-<ul>
-<li>不是对其他文档资料的复制粘贴，多些自己的思考，特别是与C/C++的对比；</li>
-<li>能记录对结合工作的RUST实践小demo，多写多debug才能更好的掌握一门语言；</li>
-<li>理清楚自己思路的过程，养成对技术知识长期积累输出的习惯。</li>
-</ul>
-<p>也或许能从我的学习经历给到你一些可以参考的经验hh？</p>
-<p>学习的资料：</p>
-<p>初学阶段：</p>
-<pre><code>1、RUST圣经：https://course.rs/about-book.html；
-
-2、RUST程序设计语言：https://rustwiki.org/zh-CN/book/ch10-00-generics.html；</code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="初识rust"><a class="header" href="#初识rust">初识RUST</a></h1>
+                        <h1 id="初识rust"><a class="header" href="#初识rust">初识RUST</a></h1>
 <blockquote>
 <p>本篇主要是在初学完《RUST圣经》基础篇后，对RUST语言的初认知。总结出我认为对于一个C/C++的程序员，在刚接触RUST之后的大体印象（即RUST的特点？），旨在一文让人对RUST有初步了解。</p>
 </blockquote>
@@ -476,33 +462,18 @@ let f6 = File::new("f6.txt"); // 创建一个新的File实例
 <blockquote>
 <p>rust里是通过use xxx来导入其他文件的模块，并简化写法；对于toml文件中引入的外部依赖，代码中可以直接用，也可以用use来简写</p>
 </blockquote>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="rust实现ip报文解析"><a class="header" href="#rust实现ip报文解析">RUST实现IP报文解析</a></h1>
-<blockquote>
-<p>绝知此事要躬行，从文档书籍里了解到的好用的枚举、泛型、特征等等，真正用起来才能熟练。</p>
-</blockquote>
-<p>这篇文章是希望去实现一个lib库，提供一个尽可能通用的报文解析功能，会有以下一些特征：</p>
-<ul>
-<li>把学习到的包括但不限于枚举，特征，泛型串起来(面向对象的编程？)，</li>
-<li>体会下文件的分布，进一步理解package,crate,mod;</li>
-</ul>
-<h2 id="它要做到什么"><a class="header" href="#它要做到什么">它要做到什么</a></h2>
-<p>开始实现之前，我们要明确功能的实现边界，让我们梳理下这个库我们希望它是怎么样的；</p>
-<p>根据TCP/IP的四层模型：接口层（物理层、数据链路层）、网络层、传输层、应用层；</p>
-<ul>
-<li>这个库我们希望它可以按层去解析网络报文；</li>
-<li>每层的解析是便于后续扩展的，方便加协议；</li>
-<li>作为一个报文解析库，我们是提供对应的API？如何提供个好用的库出去呢</li>
-</ul>
-<h2 id="它该怎么实现"><a class="header" href="#它该怎么实现">它该怎么实现</a></h2>
-<p>目录信息：</p>
-<h2 id="它是否要重构"><a class="header" href="#它是否要重构">它是否要重构</a></h2>
-<h2 id="它后续的拓展"><a class="header" href="#它后续的拓展">它后续的拓展？</a></h2>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="开端.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
+                            <a rel="next prefetch" href="解析个IP报文吧.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -510,7 +481,13 @@ let f6 = File::new("f6.txt"); // 创建一个新的File实例
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="开端.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
+                    <a rel="next prefetch" href="解析个IP报文吧.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>
@@ -549,11 +526,6 @@ let f6 = File::new("f6.txt"); // 创建一个新的File实例
 
         <!-- Custom JS scripts -->
 
-        <script>
-        window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
-        });
-        </script>
 
     </div>
     </body>
