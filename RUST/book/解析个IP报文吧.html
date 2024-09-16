@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Chapter 1</title>
+        <title>自己想的小Demo</title>
 
 
         <!-- Custom HTML head -->
@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html" class="active"><strong aria-hidden="true">1.</strong> Chapter 1</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="开端.html">写在开端</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">初学路上的所思所想</li><li class="chapter-item expanded "><a href="初识RUST.html"><strong aria-hidden="true">1.</strong> 初识RUST</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="解析个IP报文吧.html" class="active"><strong aria-hidden="true">1.1.</strong> 自己想的小Demo</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -173,12 +173,34 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="chapter-1"><a class="header" href="#chapter-1">Chapter 1</a></h1>
+                        <h1 id="rust实现ip报文解析"><a class="header" href="#rust实现ip报文解析">RUST实现IP报文解析</a></h1>
+<blockquote>
+<p>绝知此事要躬行，从文档书籍里了解到的好用的枚举、泛型、特征等等，真正用起来才能熟练。</p>
+</blockquote>
+<p>这篇文章是希望去实现一个lib库，提供一个尽可能通用的报文解析功能，会有以下一些特征：</p>
+<ul>
+<li>把学习到的包括但不限于枚举，特征，泛型串起来(面向对象的编程？)，</li>
+<li>体会下文件的分布，进一步理解package,crate,mod;</li>
+</ul>
+<h2 id="它要做到什么"><a class="header" href="#它要做到什么">它要做到什么</a></h2>
+<p>开始实现之前，我们要明确功能的实现边界，让我们梳理下这个库我们希望它是怎么样的；</p>
+<p>根据TCP/IP的四层模型：接口层（物理层、数据链路层）、网络层、传输层、应用层；</p>
+<ul>
+<li>这个库我们希望它可以按层去解析网络报文；</li>
+<li>每层的解析是便于后续扩展的，方便加协议；</li>
+<li>作为一个报文解析库，我们是提供对于的API？如何提供个好用的库出去呢</li>
+</ul>
+<h2 id="它该怎么实现"><a class="header" href="#它该怎么实现">它该怎么实现</a></h2>
+<h2 id="它是否要重构"><a class="header" href="#它是否要重构">它是否要重构</a></h2>
+<h2 id="它后续的拓展"><a class="header" href="#它后续的拓展">它后续的拓展？</a></h2>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="初识RUST.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
 
                         <div style="clear: both"></div>
@@ -187,11 +209,30 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="初识RUST.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
             </nav>
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 
