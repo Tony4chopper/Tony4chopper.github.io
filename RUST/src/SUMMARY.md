@@ -4,5 +4,5 @@
 
 ---
 # 初学路上的所思所想
-- [初识RUST](./初识RUST.md)
-    - [自己想的小Demo](./解析个IP报文吧.md)
+- [初识RUST](./basic/初识RUST.md)
+    - [自己想的小Demo](./practice/解析个IP报文吧.md)
