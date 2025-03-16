@@ -1,13 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tony4chopper</title>
+    <style>
+        /* 设置全局字体和页面样式 */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 标题样式 */
+        h1 {
+            font-size: 2em;
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 导航栏 */
+        .nav {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .nav a {
+            display: block;
+            padding: 10px 20px;
+            margin: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            border-radius: 5px;
+            transition: background 0.3s ease, transform 0.2s;
+        }
+
+        .nav a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        /* 页脚 */
+        footer {
+            margin-top: 30px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
-    <h1>Tony5chopper的个人主页</h1>
+
+    <h1>Tony5chopper 的个人主页</h1>
     <h1>Hello, It is my learning Blog~</h1>
-    <a href="./Rust/book/开端.html">我的RUST学习笔记</a>
-    <a href="./Rayon/book/0.关于并行计算.html">我的Rayon学习笔记</a>
+
+    <!-- 导航栏 -->
+    <div class="nav">
+        <a href="./Rust/book/开端.html">📖 我的 RUST 学习笔记</a>
+        <a href="./Rayon/book/0.关于并行计算.html">⚡ 我的 Rayon 并行计算笔记</a>
+        <a href="./CSAPP/book/计算机系统漫游.html">💻 我的计算机系统学习笔记</a>
+    </div>
+
+    <footer>
+        <p>© 2025 Tony5chopper | 记录我的学习之旅 🚀</p>
+    </footer>
+
 </body>
 </html>
